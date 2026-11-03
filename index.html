@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cuaderno de Comunicación · Hospital Veterinario Puchol</title>
+<meta name="description" content="Extensión digital del Cuaderno de Comunicación del Hospital Veterinario Puchol. Nuevos recursos y herramientas para mejorar la comunicación de los profesionales, próximamente.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#FFFFFF">
+
+<!-- Previsualización al compartir el enlace por WhatsApp o por correo -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cuaderno de Comunicación · Hospital Veterinario Puchol">
+<meta property="og:description" content="La comunicación también forma parte de una buena medicina veterinaria.">
+<meta property="og:locale" content="es_ES">
+<!-- AL PUBLICAR, añadir la URL definitiva y una imagen de 1200x630 px:
+     <meta property="og:url" content="https://cuaderno.hvpuchol.com">
+     <meta property="og:image" content="https://cuaderno.hvpuchol.com/og.jpg">  -->
+
+<!-- SUSTITUIR por el favicon del hospital:  <link rel="icon" href="favicon.ico">  -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap">
+
+<style>
+/* ──────────────────────────────────────────────────────────────────────────
+   Landing del Cuaderno de Comunicación · Hospital Veterinario Puchol
+
+   Composición: una sola columna de lectura centrada, ancho de texto corto,
+   mucho aire vertical y filetes finos como única división. El lenguaje gráfico
+   es el del propio cuaderno —rótulos en versalitas espaciadas, titular con
+   serifa, acento vertical granate en la cita— para que quien escanee el QR
+   reconozca que está en el mismo sitio.
+
+   Página en tema claro por decisión: el blanco es parte de la identidad del
+   hospital y el sistema de marca no define una paleta oscura. Todos los
+   colores se declaran explícitamente, así que la página se ve igual sea cual
+   sea el fondo del visor.
+
+   SISTEMA DE MARCA · no modificar sin pasar por Dirección de Comunicación
+   ────────────────────────────────────────────────────────────────────────── */
+:root{
+  color-scheme: light;
+
+  /* Color */
+  --granate:   #AA3157;   /* color corporativo · títulos, acentos, filetes */
+  --pizarra:   #4A5153;   /* color de trabajo · texto de cuerpo */
+  --suave:     #E8E4E5;   /* líneas divisorias */
+  --alterno:   #FAF7F8;   /* fondos alternos */
+  --papel:     #FFFFFF;   /* fondo dominante */
+  --tenue:     #8A9093;   /* metadatos · derivado del gris pizarra */
+
+  /* Tipografía */
+  --serifa: "DM Serif Display", Georgia, "Times New Roman", serif;
+  --palo:   "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+
+  /* Ritmo */
+  --columna: 36rem;
+}
+
+*{ box-sizing: border-box }
+
+body{
+  margin: 0;
+  background: var(--papel);
+  color: var(--pizarra);
+  font-family: var(--palo);
+  font-size: 1.0625rem;
+  font-weight: 300;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Gutter lateral único de la página: nunca menos de 16 px, y despejado de una
+   barra de sistema lateral en el móvil. */
+.lienzo{
+  max-width: var(--columna);
+  margin-inline: auto;
+  padding-left:  max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: clamp(3.5rem, 11vw, 7rem) clamp(2.5rem, 8vw, 4.5rem);
+}
+
+/* ── Encabezado ─────────────────────────────────────────────────────────── */
+/* SUSTITUIR POR EL LOGOTIPO: cambiar el <p class="marca"> del HTML por
+   <img src="logo-puchol.svg" alt="Hospital Veterinario Puchol" class="logo">
+   La regla .logo de abajo ya limita la altura sin deformarlo.              */
+.marca{
+  margin: 0;
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--granate);
+}
+.logo{ display: block; height: 2.5rem; width: auto }
+
+/* ── Titular ────────────────────────────────────────────────────────────── */
+.titulo{
+  margin: clamp(2.5rem, 9vw, 4rem) 0 0;
+  font-family: var(--serifa);
+  font-weight: 400;
+  font-size: clamp(2.5rem, 10vw, 4rem);
+  line-height: 1.02;
+  letter-spacing: -.01em;
+  color: var(--granate);
+  text-wrap: balance;
+}
+
+/* Cita de apertura con el acento vertical granate del cuaderno */
+.lema{
+  margin: clamp(1.75rem, 6vw, 2.5rem) 0 0;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--granate);
+  font-family: var(--serifa);
+  font-style: italic;
+  font-size: clamp(1.1875rem, 4.5vw, 1.4375rem);
+  line-height: 1.45;
+  color: var(--pizarra);
+  text-wrap: pretty;
+}
+
+/* ── Cuerpo ─────────────────────────────────────────────────────────────── */
+.cuerpo{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: clamp(2.5rem, 8vw, 3.5rem);
+}
+.cuerpo p{ margin: 0; text-wrap: pretty }
+.cuerpo strong{ font-weight: 500; color: var(--pizarra) }
+
+/* Rótulo en versalitas, como los del cuaderno */
+.rotulo{
+  display: block;
+  margin: 0 0 .75rem;
+  font-size: .6875rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--tenue);
+}
+
+/* ── Bloque de continuidad ──────────────────────────────────────────────── */
+.espacio{
+  margin-top: clamp(3rem, 10vw, 4.5rem);
+  padding-top: clamp(2rem, 7vw, 3rem);
+  border-top: 1px solid var(--suave);
+}
+
+/* Indicador de estado · píldora del sistema de formularios HVP */
+.estado{
+  display: inline-flex;
+  align-items: center;
+  gap: .625rem;
+  margin-top: 2rem;
+  padding: .5rem 1rem;
+  border: 1px solid var(--suave);
+  border-radius: 999px;
+  background: var(--alterno);
+  font-size: .8125rem;
+  font-weight: 500;
+  letter-spacing: .01em;
+  color: var(--pizarra);
+}
+.punto{
+  width: .4375rem;
+  height: .4375rem;
+  border-radius: 50%;
+  background: var(--granate);
+  flex: none;
+}
+
+/* ── Cierre ─────────────────────────────────────────────────────────────── */
+.cierre{
+  margin-top: clamp(4rem, 12vw, 6rem);
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--suave);
+  font-size: .8125rem;
+  line-height: 1.6;
+  color: var(--tenue);
+}
+.cierre b{
+  display: block;
+  font-weight: 600;
+  font-size: .6875rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--pizarra);
+  margin-bottom: .375rem;
+}
+
+/* ── Entrada en escena ──────────────────────────────────────────────────── */
+/* Secuencia breve al cargar, no al hacer scroll: la página está completa en
+   cuanto termina, y con movimiento reducido no se anima nada.              */
+@media (prefers-reduced-motion: no-preference){
+  .sube{ animation: sube .7s cubic-bezier(.22,.61,.36,1) backwards }
+  .sube:nth-child(1){ animation-delay: .05s }
+  .sube:nth-child(2){ animation-delay: .15s }
+  .sube:nth-child(3){ animation-delay: .25s }
+  .sube:nth-child(4){ animation-delay: .35s }
+  .sube:nth-child(5){ animation-delay: .45s }
+  .sube:nth-child(6){ animation-delay: .55s }
+}
+@keyframes sube{
+  from{ opacity: 0; transform: translateY(10px) }
+  to  { opacity: 1; transform: none }
+}
+
+a{ color: var(--granate) }
+a:focus-visible{ outline: 2px solid var(--granate); outline-offset: 3px; border-radius: 2px }
+</style>
+</head>
+<body>
+
+<main class="lienzo">
+
+  <!-- Encabezado · aquí va el logotipo -->
+  <p class="marca sube">Hospital Veterinario Puchol</p>
+
+  <h1 class="titulo sube">Cuaderno de Comunicación</h1>
+
+  <p class="lema sube">La comunicación también forma parte de una buena medicina veterinaria.</p>
+
+  <div class="cuerpo sube">
+    <p>Comunicar bien no es un don con el que se nace.</p>
+
+    <p>Es una competencia clínica más: se aprende y se entrena.</p>
+
+    <p>Esa es la razón de ser del Cuaderno de Comunicación: poner por escrito cómo
+      queremos hablar con las familias, con los pacientes y entre nosotros.</p>
+  </div>
+
+  <section class="espacio sube">
+    <span class="rotulo">Este espacio digital</span>
+    <p style="margin:0;text-wrap:pretty">Aquí seguiremos avanzando. Este es el lugar
+      donde iremos reuniendo nuevos recursos, herramientas y materiales para que todo
+      el equipo del Hospital Veterinario Puchol siga mejorando la forma en que
+      comunica, dentro y fuera de la consulta.</p>
+
+    <span class="estado"><i class="punto"></i>Nuevos contenidos, próximamente</span>
+  </section>
+
+  <footer class="cierre sube">
+    <b>Hospital Veterinario Puchol</b>
+    Compartimos conocimiento para seguir creciendo juntos.
+  </footer>
+
+</main>
+
+</body>
+</html>
